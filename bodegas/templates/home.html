@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center py-2">Noticias de interés</h1>
+<div class="container">
+    <div class="row">
+        {% for noticia in noticias %}
+        <div class="col-md-4 mb-4"> <!-- Ajusta el ancho de las cards -->
+            <div class="card">
+                <img 
+                    src="{{ noticia.imagen_url }}" 
+                    alt="{{ noticia.titulo }}" 
+                    class="card-img-top" 
+                />
+                <div class="card-body">
+                    <h2 class="card-title">{{ noticia.titulo }}</h2>
+                    <p class="card-text">{{ noticia.cuerpo }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+<h1 class="text-center py-2">Noticias de interés</h1>
+<div class="container">
+    <div class="card-deck">
+        {% for noticia in noticias %}
+        <div class="card">
+        <img src="{{ noticia.imagen_url }}" 
+        alt="{{ noticia.titulo }}"
+        class="card-img-top"/>
+        <div class="card-body">
+            <h2 class="card-title">{{noticia.titulo}}</h2>
+            <h5 class="card-text">{{noticia.cuerpo}}</h5>
+        </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

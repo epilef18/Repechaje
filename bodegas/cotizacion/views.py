@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def cotizar(request):
+    return render(request, "cotizacion/cotizar.html", {})
+
+
+def cotizacion(request):
+    return render(request, "cotizacion/cotizacion.html", {})

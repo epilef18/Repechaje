@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import TipoBodega, Bodega, Cotizacion
 
-# Register your models here.
+admin.site.register(TipoBodega)
+admin.site.register(Bodega)
+admin.site.register(Cotizacion)
