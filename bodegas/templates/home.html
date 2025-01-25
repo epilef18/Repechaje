@@ -5,12 +5,19 @@ Home
 {% endblock %}
 
 {% block content %}
+<div class="d-flex align-items-center py-2 ml-5">
+    <h1 class="text-center">Noticias de interés</h1>
+    {% if user.is_authenticated %}
+        <button class="btn btn-success">
+            <a href="{% url 'cotizacion:cotizar' %}" class="text-white">Cotizar</a>
+        </button>
+    {% endif %}
+</div>
 
-<h1 class="text-center py-2">Noticias de interés</h1>
 <div class="container">
     <div class="row">
         {% for noticia in noticias %}
-        <div class="col-md-4 mb-4"> <!-- Ajusta el ancho de las cards -->
+        <div class="col-md-4 mb-4">
             <div class="card">
                 <img 
                     src="{{ noticia.imagen_url }}" 
@@ -18,7 +25,9 @@ Home
                     class="card-img-top" 
                 />
                 <div class="card-body">
-                    <h2 class="card-title">{{ noticia.titulo }}</h2>
+                    <a href="{% url 'noticia' slug=noticia.slug %}">
+                        <h2 class="card-title">{{ noticia.titulo }}</h2>
+                    </a>
                     <p class="card-text">{{ noticia.cuerpo }}</p>
                 </div>
             </div>
@@ -28,19 +37,3 @@ Home
 </div>
 
 {% endblock %}
-<h1 class="text-center py-2">Noticias de interés</h1>
-<div class="container">
-    <div class="card-deck">
-        {% for noticia in noticias %}
-        <div class="card">
-        <img src="{{ noticia.imagen_url }}" 
-        alt="{{ noticia.titulo }}"
-        class="card-img-top"/>
-        <div class="card-body">
-            <h2 class="card-title">{{noticia.titulo}}</h2>
-            <h5 class="card-text">{{noticia.cuerpo}}</h5>
-        </div>
-        </div>
-    </div>
-</div>
-{% endfor %}

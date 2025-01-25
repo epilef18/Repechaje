@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %}
-
+    Registro de usuario
 {% endblock %}
 
 {% block content %}
     <h1>Registrar</h1>
+    <form action="/usuarios/registrar/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button>Registrar</button>
+    </form>
 {% endblock %}

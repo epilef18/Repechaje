@@ -24,4 +24,5 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("cotizacion/", include("cotizacion.urls")),
     path("usuarios/", include("usuarios.urls")),
+    path("<slug:slug>", views.noticia, name="noticia"),
 ]

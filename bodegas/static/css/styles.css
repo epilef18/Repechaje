@@ -1,0 +1,94 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+
+nav .logout {
+    display: inline-block;
+}
+
+nav .logout-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+nav .logout-button:hover {
+    background-color: #d32f2f;
+}
+
+nav > a:first-child {
+    margin-right: auto;
+}
+
+nav p {
+    color: white;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.75rem;
+    color: #343a40;
+    margin-top: 20px;
+}
+
+.card-text {
+    color: #6c757d;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1.text-center {
+        font-size: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+}

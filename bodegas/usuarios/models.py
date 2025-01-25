@@ -14,6 +14,7 @@ class Noticia(models.Model):
     titulo = models.CharField(max_length=45)
     cuerpo = models.TextField()
     imagen_url = models.URLField(max_length=255, blank=True, null=True)
+    slug = models.SlugField(default="", null=False)
 
     def __str__(self):
         return self.titulo

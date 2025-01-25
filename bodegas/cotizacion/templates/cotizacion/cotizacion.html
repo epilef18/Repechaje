@@ -5,5 +5,32 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Cotización</h1>
+<div class="container">
+    <h2>Resultado de Cotización</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Tipo</th>
+                <th>Precio Mensual</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bodega in cotizacion.bodegas.all %}
+            <tr>
+                <td>{{ bodega.codigo }}</td>
+                <td>{{ bodega.tipo_bodega.tipo }}</td>
+                <td>${{ bodega.tipo_bodega.precio_mensual }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">Total</th>
+                <th>${{ cotizacion.precio_total }}</th>
+            </tr>
+        </tfoot>
+    </table>
+    <a href="{% url 'cotizacion:cotizar' %}" class="btn btn-primary">Nueva Cotización</a>
+</div>
 {% endblock %}
